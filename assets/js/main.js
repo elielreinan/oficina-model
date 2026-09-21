@@ -114,5 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Dark Mode Toggle (placeholder for future implementation)
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
 // Future: Add toggle button and persist preference
