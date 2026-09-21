@@ -1,0 +1,15 @@
+# Dependências e pastas de build
+node_modules/
+dist/
+build/
+.cache/
+
+# Arquivos sensíveis e de configuração do editor
+.vscode/
+.idea/
+.env
+.DS_Store
+
+# Arquivos do sistema
+Thumbs.db
+*.log
