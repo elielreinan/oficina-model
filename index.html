@@ -50,6 +50,9 @@
             background-position: center;
             background-attachment: fixed;
         }
+        /* Ocultar barra de rolagem do carrossel */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
     <!-- FIM DO MODULO: CONFIGURAÇÕES E ESTILOS -->
 </head>
@@ -182,6 +185,91 @@
             </div>
         </section>
         <!-- FIM DO MODULO: DESTAQUES -->
+
+        <!-- MODULO: CARROSSEL DE MARCAS -->
+        <section class="py-12 bg-white border-t border-gray-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-8">
+                    <div>
+                        <span class="text-brand font-bold uppercase tracking-wider text-sm">Nossa cobertura</span>
+                        <h3 class="text-3xl font-extrabold text-dark mt-2">Atendemos as principais marcas do Brasil</h3>
+                    </div>
+                    <div class="flex gap-3">
+                        <button id="brands-prev" type="button" aria-label="Ver marcas anteriores" class="w-12 h-12 rounded-full border-2 border-gray-200 text-gray-600 flex items-center justify-center hover:border-brand hover:text-white hover:bg-brand transition-all focus:outline-none focus:ring-2 focus:ring-brand/40">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button id="brands-next" type="button" aria-label="Ver próximas marcas" class="w-12 h-12 rounded-full border-2 border-gray-200 text-gray-600 flex items-center justify-center hover:border-brand hover:text-white hover:bg-brand transition-all focus:outline-none focus:ring-2 focus:ring-brand/40">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div id="brands-carousel" class="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2">
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/volkswagen" alt="Logo Volkswagen" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Volkswagen</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/chevrolet" alt="Logo Chevrolet" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Chevrolet</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/fiat" alt="Logo Fiat" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Fiat</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/ford" alt="Logo Ford" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Ford</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/toyota" alt="Logo Toyota" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Toyota</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/honda" alt="Logo Honda" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Honda</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/hyundai" alt="Logo Hyundai" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Hyundai</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/nissan" alt="Logo Nissan" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Nissan</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/renault" alt="Logo Renault" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Renault</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/kia" alt="Logo Kia" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Kia</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/bmw" alt="Logo BMW" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">BMW</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/mercedes-benz" alt="Logo Mercedes-Benz" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Mercedes-Benz</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/audi" alt="Logo Audi" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Audi</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/peugeot" alt="Logo Peugeot" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Peugeot</span>
+                        </div>
+                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
+                            <img src="https://cdn.simpleicons.org/opel" alt="Logo Opel" class="w-24 h-16 object-contain">
+                            <span class="font-bold text-dark">Opel</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FIM DO MODULO: CARROSSEL DE MARCAS -->
 
         <!-- MODULO: SOBRE NÓS (Opcional, gera confiança) -->
         <section id="sobre" class="py-20 bg-white">
@@ -459,8 +547,8 @@
                 </div>
             </div>
             
-            <div class="text-center text-sm text-gray-500">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> AutoFix Oficina Mecânica. Todos os direitos reservados.</p>
+<div class="text-center text-sm text-gray-500">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> AutoFix Oficina Mecânica. Todos os direitos reservados. | <a href="https://instagram.com/e2.dev" class="text-gray-500 hover:underline" target="_blank" rel="noopener noreferrer" aria-label="Visite nosso Instagram @e2.dev">E2 Dev</a></p>
             </div>
         </div>
     </footer>
@@ -508,6 +596,32 @@
             } else {
                 header.classList.remove('shadow-md');
             }
+        });
+
+        // Carrossel de Marcas - Auto Scroll
+        const carousel = document.getElementById('brands-carousel');
+        let scrollAmount = 0;
+        const scrollStep = 2;
+
+        function autoScroll() {
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                carousel.scrollLeft = 0;
+            } else {
+                carousel.scrollLeft += scrollStep;
+            }
+        }
+        const autoScrollInterval = setInterval(autoScroll, 30);
+
+        // Pausar auto-scroll ao passar o mouse
+        carousel.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        carousel.addEventListener('mouseleave', () => setInterval(autoScroll, 30));
+
+        // Botões de navegação manual
+        document.getElementById('brands-prev').addEventListener('click', () => {
+            carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        document.getElementById('brands-next').addEventListener('click', () => {
+            carousel.scrollBy({ left: 300, behavior: 'smooth' });
         });
     </script>
     <!-- FIM DO MODULO: SCRIPTS JS -->
