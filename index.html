@@ -4,34 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoFix - Oficina Mecânica de Confiança</title>
+    <meta name="description" content="Exemplo de landing page para oficina mecânica multimarcas, com agendamento via WhatsApp e serviços automotivos.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="AutoFix — Oficina Mecânica de Confiança">
+    <meta property="og:description" content="Modelo demonstrativo de landing page para oficina mecânica.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=1200&q=80">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#ea580c">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23ea580c'/%3E%3Cpath d='M40 12a14 14 0 0 0-14 14c0 3 1 6 3 8L14 49l5 5 15-15c2 1 5 3 8 3a14 14 0 0 0 0-28h-2zm2 8a6 6 0 1 1 0 12 6 6 0 0 1 0-12z' fill='white'/%3E%3C/svg%3E">
     
-<!-- SEO & Social Meta Tags -->
-    <meta name="description" content="AutoFix: Oficina mecânica com transparência, diagnósticos computadorizados e garantia total. Agende sua revisão preventiva.">
-    <meta property="og:title" content="AutoFix - Oficina Mecânica de Confiança">
-    <meta property="og:description" content="Transparência, rapidez e segurança para o seu veículo.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=AutoFix+Oficina+Mec%C3%A2nica">
-    <meta property="og:url" content="https://elielreinan.github.io/oficina-model/">
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="https://via.placeholder.com/32.png?text=AF" type="image/x-icon">
-    
-    <!-- Google Fonts (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome (Ícones) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    
-<!-- Tailwind CSS Configuration - MUST come before Tailwind script -->
+    <!-- MODULO: CONFIGURAÇÕES E ESTILOS -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind = {
+        // CONFIGURAÇÃO PARA O DESENVOLVEDOR
+        // Altere a cor 'brand' aqui para mudar a cor principal de toda a página (botões, ícones, detalhes)
+        tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         brand: {
+                            // Padrão: Laranja (Focado em conversão e automotivo)
                             DEFAULT: '#ea580c', // orange-600
                             light: '#f97316',   // orange-500
                             dark: '#c2410c',    // orange-700
@@ -48,10 +43,13 @@
             }
         }
     </script>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- JS Externo -->
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- FIM DO MODULO: CONFIGURAÇÕES E ESTILOS -->
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased selection:bg-brand selection:text-white">
 
@@ -61,7 +59,7 @@
             <div class="flex justify-between items-center h-20">
                 
                 <!-- Logo -->
-                <a href="#" class="flex items-center gap-2">
+                <a href="#inicio" class="flex items-center gap-2">
                     <div class="w-10 h-10 bg-brand rounded-lg flex items-center justify-center text-white text-xl">
                         <i class="fa-solid fa-wrench"></i>
                     </div>
@@ -86,7 +84,7 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-brand focus:outline-none text-2xl">
+                    <button id="mobile-menu-button" type="button" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu" class="text-gray-600 hover:text-brand focus:outline-none text-2xl">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
@@ -117,6 +115,7 @@
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand/20 border border-brand/50 text-brand-light text-sm font-bold tracking-wide uppercase mb-6 backdrop-blur-sm">
                         <i class="fa-solid fa-star"></i> Oficina Mecânica Premium
                     </div>
+                    <p class="text-xs text-gray-400 mb-3">Modelo demonstrativo — todos os dados desta página são fictícios.</p>
                     
                     <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
                         Transparência, rapidez e <span class="text-brand">segurança</span> para o seu veículo.
@@ -184,70 +183,31 @@
         <!-- FIM DO MODULO: DESTAQUES -->
 
         <!-- MODULO: CARROSSEL DE MARCAS -->
-        <section class="py-12 bg-white border-t border-gray-100 overflow-hidden">
+        <section id="marcas" class="py-16 bg-white border-y border-gray-100 overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-8">
                     <div>
-                        <span class="text-brand font-bold uppercase tracking-wider text-sm">Nossa cobertura</span>
-                        <h3 class="text-3xl font-extrabold text-dark mt-2">Atendemos as principais marcas do Brasil</h3>
+                        <span class="text-brand font-bold uppercase tracking-wider text-sm">Atendimento multimarcas</span>
+                        <h2 class="text-3xl font-extrabold text-dark mt-2">Marcas comuns que atendemos</h2>
+                        <p class="text-gray-600 mt-3">Do carro popular aos modelos importados: consulte-nos para confirmar o seu veículo.</p>
                     </div>
                     <div class="flex gap-3">
-                        <button id="brands-prev" type="button" aria-label="Ver marcas anteriores" class="w-12 h-12 rounded-full border-2 border-gray-200 text-gray-600 flex items-center justify-center hover:border-brand hover:text-white hover:bg-brand transition-all focus:outline-none focus:ring-2 focus:ring-brand/40">
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </button>
-                        <button id="brands-next" type="button" aria-label="Ver próximas marcas" class="w-12 h-12 rounded-full border-2 border-gray-200 text-gray-600 flex items-center justify-center hover:border-brand hover:text-white hover:bg-brand transition-all focus:outline-none focus:ring-2 focus:ring-brand/40">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
+                        <button id="brands-prev" type="button" aria-label="Ver marcas anteriores" class="carousel-control"><i class="fa-solid fa-arrow-left"></i></button>
+                        <button id="brands-next" type="button" aria-label="Ver próximas marcas" class="carousel-control"><i class="fa-solid fa-arrow-right"></i></button>
                     </div>
                 </div>
-                <div class="relative">
-                    <div id="brands-carousel" class="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2">
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/volkswagen" alt="Logo Volkswagen" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Volkswagen</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/chevrolet" alt="Logo Chevrolet" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Chevrolet</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/fiat" alt="Logo Fiat" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Fiat</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/ford" alt="Logo Ford" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Ford</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/toyota" alt="Logo Toyota" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Toyota</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/honda" alt="Logo Honda" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Honda</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/hyundai" alt="Logo Hyundai" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Hyundai</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/nissan" alt="Logo Nissan" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Nissan</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/renault" alt="Logo Renault" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Renault</span>
-                        </div>
-                        <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                            <img src="https://cdn.simpleicons.org/kia" alt="Logo Kia" class="w-24 h-16 object-contain">
-                            <span class="font-bold text-dark">Kia</span>
-                        </div>
-                         <div data-brand class="flex-shrink-0 w-44 sm:w-52 snap-center bg-gray-50 border border-gray-100 rounded-2xl px-6 py-7 flex flex-col items-center gap-4 shadow-sm hover:shadow-xl hover:border-brand/30 hover:-translate-y-1 transition-all duration-300">
-                             <img src="https://cdn.simpleicons.org/peugeot" alt="Logo Peugeot" class="w-24 h-16 object-contain">
-                             <span class="font-bold text-dark">Peugeot</span>
-                         </div>
-                     </div>
+                <div id="brands-carousel" class="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-3" aria-label="Marcas atendidas">
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Volkswagen%20Logo.svg" alt="Volkswagen" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Chevrolet%20Logo.svg" alt="Chevrolet" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Fiat%20Logo.svg" alt="Fiat" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Toyota%20Logo.svg" alt="Toyota" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Honda%20Logo.svg" alt="Honda" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Hyundai%20Logo.svg" alt="Hyundai" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Ford%20Logo.svg" alt="Ford" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Nissan%20Logo.svg" alt="Nissan" loading="lazy"></div>
+                    <div class="brand-card"><img src="https://raw.githubusercontent.com/cardog-ai/icons/master/core/optimized/Jeep%20Logo.svg" alt="Jeep" loading="lazy"></div>
                 </div>
+                <p class="mt-5 text-xs text-gray-400">Marcas exibidas apenas para fins demonstrativos; não representam parceria comercial.</p>
             </div>
         </section>
         <!-- FIM DO MODULO: CARROSSEL DE MARCAS -->
@@ -348,74 +308,6 @@
         </section>
         <!-- FIM DO MODULO: SERVIÇOS -->
 
-        <!-- MODULO: PERGUNTAS FREQUENTES (FAQ) -->
-        <section id="faq" class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-brand font-bold uppercase tracking-wider text-sm">Perguntas Frequentes</span>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-dark mt-2">Dúvidas comuns sobre nossos serviços</h2>
-                </div>
-                
-                <div class="space-y-4" id="faq-accordion">
-                    <!-- FAQ Item 1 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <div class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 faq-question" data-index="0">
-                            <h3 class="text-lg font-medium text-dark">Quanto tempo leva uma revisão preventiva?</h3>
-                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-answer hidden px-5 pb-5 text-gray-600">
-                            Uma revisão preventiva básica geralmente leva entre 1 a 2 horas, dependendo do modelo do veículo e dos itens verificados. Revisões mais completas podem levar até 4 horas.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 2 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <div class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 faq-question" data-index="1">
-                            <h3 class="text-lg font-medium text-dark">Vocês trabalham com agendamento?</h3>
-                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-answer hidden px-5 pb-5 text-gray-600">
-                            Sim, trabalhamos exclusivamente com agendamento para garantir melhor atendimento e reduzir tempos de espera. Você pode agendar pelo WhatsApp, telefone ou através do nosso formulário de contato.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 3 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <div class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 faq-question" data-index="2">
-                            <h3 class="text-lg font-medium text-dark">Qual é a garantia dos serviços realizados?</h3>
-                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-answer hidden px-5 pb-5 text-gray-600">
-                            Oferecemos garantia de 90 dias ou 5.000 km (o que ocorrer primeiro) em todos os serviços de mão de obra. Para peças, seguimos a garantia fornecida pelos fabricantes.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 4 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <div class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 faq-question" data-index="3">
-                            <h3 class="text-lg font-medium text-dark">Vocês aceitam cartão de crédito?</h3>
-                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-answer hidden px-5 pb-5 text-gray-600">
-                            Sim, aceitamos todos os principais cartões de crédito (Visa, Mastercard, Elo, American Express) em até 12x sem juros, além de dinheiro e PIX.
-                        </div>
-                    </div>
-                    
-                    <!-- FAQ Item 5 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <div class="flex items-center justify-between p-5 cursor-pointer hover:bg-gray-50 faq-question" data-index="4">
-                            <h3 class="text-lg font-medium text-dark">Preciso levar meu carro para diagnóstico se a luz do painel acender?</h3>
-                            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300"></i>
-                        </div>
-                        <div class="faq-answer hidden px-5 pb-5 text-gray-600">
-                            Sim, recomenda-se fortemente. Luzes acesas no painel indicam que o sistema eletrônico detectou algum problema. Ignorar esses sinais pode levar a danos maiores e custos de reparo mais altos. Nosso diagnóstico computadorizado identifica com precisão a causa do problema.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- FIM DO MODULO: PERGUNTAS FREQUENTES (FAQ) -->
-
         <!-- MODULO: CHAMADA PARA AÇÃO (CTA BANNER) -->
         <section class="py-16 bg-dark relative overflow-hidden">
             <!-- Background Decoration -->
@@ -443,7 +335,7 @@
                     <div class="flex justify-center gap-1 text-yellow-400 mt-4 text-xl">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-gray-500 text-sm mt-2">Nota 4.9/5 baseada em avaliações do Google</p>
+                    <p class="text-gray-500 text-sm mt-2">Depoimentos ilustrativos para esta landing page de exemplo</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
@@ -495,107 +387,65 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-12">
                     
-<!-- Informações de Contato -->
-                <div>
-                    <span class="text-brand font-bold uppercase tracking-wider text-sm">Fale Conosco</span>
-                    <h2 class="text-3xl font-extrabold text-dark mt-2 mb-8">Agende sua visita ou tire suas dúvidas</h2>
-                    
-                    <div class="space-y-6">
-                        <!-- Endereço -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-dark">Nosso Endereço</h4>
-                                <p class="text-gray-600 mt-1">Av. das Nações Unidas, 1500<br>Centro, São Paulo - SP, 01000-000</p>
-                            </div>
-                        </div>
-    
-                        <!-- Telefone/WhatsApp -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-dark">WhatsApp / Telefone</h4>
-                                <p class="text-gray-600 mt-1">(11) 99999-9999</p>
-                            </div>
-                        </div>
-    
-                        <!-- Horário -->
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-lg font-bold text-dark">Horário de Funcionamento</h4>
-                                <p class="text-gray-600 mt-1">
-                                    Segunda a Sexta: 08:00 às 18:00<br>
-                                    Sábado: 08:00 às 12:00
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Formulário de Contato -->
-                    <form id="contactForm" class="mt-6 space-y-4">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome completo</label>
-                                <input type="text" id="name" name="name" required 
-                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone com WhatsApp</label>
-                                <input type="tel" id="phone" name="phone" required 
-                                       placeholder="(11) 99999-9999"
-                                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Sua mensagem</label>
-                            <textarea id="message" name="message" rows="4" required
-                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand/50 focus:border-brand transition-all"
-                                      placeholder="Descreva o problema do seu veículo ou solicite um orçamento..."></textarea>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="newsletter" type="checkbox" class="w-4 h-4 text-brand focus:ring-brand border-gray-300 rounded">
+                    <!-- Informações de Contato -->
+                    <div>
+                        <span class="text-brand font-bold uppercase tracking-wider text-sm">Fale Conosco</span>
+                        <h2 class="text-3xl font-extrabold text-dark mt-2 mb-8">Agende sua visita ou tire suas dúvidas</h2>
+                        <div class="space-y-6">
+                            <!-- Endereço -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
                                 </div>
-                                <div class="ml-3 text-sm">
-                                    <label for="newsletter" class="text-gray-500">
-                                        Deseja receber dicas de manutenção por WhatsApp?
-                                    </label>
+                                <div>
+                                    <h4 class="text-lg font-bold text-dark">Nosso Endereço</h4>
+                                    <p class="text-gray-600 mt-1">Av. das Nações Unidas, 1500<br>Centro, São Paulo - SP, 01000-000</p>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <button type="submit" 
-                                class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-3 px-6 rounded-lg 
-                                       transition-all duration-200 transform hover:-translate-y-0.5 
-                                       shadow-lg shadow-brand/30 hover:shadow-brand/40 flex items-center justify-center gap-2">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            Enviar via WhatsApp
-                        </button>
-                        
-                        <div id="formMessage" class="mt-4 hidden"></div>
-                    </form>
-                </div>
 
-                    <!-- Mapa (Placeholder Estilizado ou Iframe) -->
-                    <div class="h-[400px] bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 relative">
-                        <!-- Substitua a div abaixo pelo seu Iframe do Google Maps -->
-                        <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-100">
-                            <i class="fa-solid fa-map-location-dot text-6xl text-gray-300 mb-4"></i>
-                            <p class="text-gray-500 font-medium">Insira o iframe do Google Maps aqui</p>
-                            <!-- Exemplo de iframe:
-                            <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            -->
+                            <!-- Telefone/WhatsApp -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-dark">WhatsApp / Telefone</h4>
+                                    <p class="text-gray-600 mt-1">(11) 99999-9999</p>
+                                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer" class="text-brand font-medium hover:underline text-sm mt-1 inline-block">Clique para enviar mensagem</a>
+                                </div>
+                            </div>
+
+                            <!-- Horário -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center text-brand text-xl shrink-0">
+                                    <i class="fa-solid fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-dark">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600 mt-1">
+                                        Segunda a Sexta: 08:00 às 18:00<br>
+                                        Sábado: 08:00 às 12:00
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                        <form id="contactForm" class="mt-8 space-y-4" novalidate>
+                            <h3 class="text-xl font-bold text-dark">Peça seu orçamento</h3>
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <div><label for="name" class="form-label">Nome completo</label><input id="name" name="name" type="text" autocomplete="name" class="form-input" required></div>
+                                <div><label for="phone" class="form-label">WhatsApp</label><input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 99999-9999" class="form-input" required></div>
+                            </div>
+                            <div><label for="message" class="form-label">Como podemos ajudar?</label><textarea id="message" name="message" rows="4" placeholder="Ex.: revisão, troca de óleo ou diagnóstico" class="form-input" required></textarea></div>
+                            <label class="flex items-start gap-3 text-sm text-gray-600"><input id="privacy" type="checkbox" class="mt-1 w-4 h-4 accent-orange-600" required><span>Autorizo o uso destes dados exclusivamente para o retorno deste atendimento via WhatsApp. <strong>Exemplo demonstrativo.</strong></span></label>
+                            <button type="submit" class="w-full bg-brand hover:bg-brand-dark text-white font-bold py-3 px-6 rounded-lg transition-all shadow-lg shadow-brand/30"><i class="fa-brands fa-whatsapp mr-2"></i>Enviar pelo WhatsApp</button>
+                            <p id="formMessage" class="hidden" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+
+                    <!-- Mapa demonstrativo -->
+                    <div class="h-[400px] bg-gray-200 rounded-xl overflow-hidden shadow-lg border border-gray-300 relative">
+                        <iframe title="Mapa demonstrativo da AutoFix" src="https://www.google.com/maps?q=Av.%20das%20Na%C3%A7%C3%B5es%20Unidas%2C%201500%2C%20S%C3%A3o%20Paulo&output=embed" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <span class="absolute bottom-3 left-3 rounded bg-white/95 px-3 py-1.5 text-xs font-medium text-gray-600 shadow">Localização ilustrativa</span>
                     </div>
 
                 </div>
@@ -610,7 +460,7 @@
             <div class="grid md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-gray-800">
                 <!-- Brand Info -->
                 <div>
-                    <a href="#" class="flex items-center gap-2 mb-4">
+                    <a href="#inicio" class="flex items-center gap-2 mb-4">
                         <div class="w-8 h-8 bg-brand rounded flex items-center justify-center text-white">
                             <i class="fa-solid fa-wrench"></i>
                         </div>
@@ -642,15 +492,15 @@
                 </div>
             </div>
             
-<div class="text-center text-sm text-gray-500">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> AutoFix Oficina Mecânica. Todos os direitos reservados. | <a href="https://instagram.com/e2.dev" class="text-gray-500 hover:underline" target="_blank" rel="noopener noreferrer" aria-label="Visite nosso Instagram @e2.dev">E2 Dev</a></p>
+            <div class="text-center text-sm text-gray-500">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> AutoFix Oficina Mecânica. Modelo demonstrativo com dados fictícios. <span class="mx-1">•</span> Codado por <a href="https://instagram.com/2e.dev" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-white transition-colors">2E Dev</a></p>
             </div>
         </div>
     </footer>
     <!-- FIM DO MODULO: FOOTER -->
 
     <!-- MODULO: BOTAO WHATSAPP FLUTUANTE -->
-    <a href="#" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg shadow-green-500/30 z-50 transform transition-transform hover:scale-110" aria-label="Fale conosco pelo WhatsApp">
+    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20agendar%20um%20atendimento." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#128C7E] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg shadow-green-500/30 z-50 transform transition-transform hover:scale-110" aria-label="Fale conosco pelo WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
     <!-- FIM DO MODULO: WHATSAPP FLUTUANTE -->

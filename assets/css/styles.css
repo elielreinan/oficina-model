@@ -2,9 +2,44 @@ body { font-family: 'Inter', sans-serif; }
 
 .hero-bg {
     background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-size: cover;
 }
+
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.carousel-control {
+    align-items: center;
+    border: 2px solid #e5e7eb;
+    border-radius: 9999px;
+    color: #4b5563;
+    display: inline-flex;
+    height: 3rem;
+    justify-content: center;
+    transition: .2s;
+    width: 3rem;
+}
+.carousel-control:hover, .carousel-control:focus-visible { background: #ea580c; border-color: #ea580c; color: #fff; outline: none; }
+.brand-card {
+    align-items: center;
+    background: #f9fafb;
+    border: 1px solid #f3f4f6;
+    border-radius: 1rem;
+    color: #0f172a;
+    display: flex;
+    flex: 0 0 11rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    height: 7.5rem;
+    justify-content: center;
+    scroll-snap-align: start;
+    transition: transform .2s, box-shadow .2s;
+}
+.brand-card:hover { box-shadow: 0 12px 24px rgb(15 23 42 / .12); transform: translateY(-.25rem); }
+.brand-card img { height: 4.75rem; max-width: 9.5rem; object-fit: contain; width: 100%; }
+.form-label { color: #374151; display: block; font-size: .875rem; font-weight: 600; margin-bottom: .375rem; }
+.form-input { border: 1px solid #d1d5db; border-radius: .5rem; display: block; outline: none; padding: .625rem .875rem; transition: border-color .2s, box-shadow .2s; width: 100%; }
+.form-input:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgb(234 88 12 / .16); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition-duration: .01ms !important; } }
